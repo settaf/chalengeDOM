@@ -47,7 +47,7 @@
       </div>
 
       <button
-        type="submit"
+        
         class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium rounded px-4 py-2"
       >
         Add task
@@ -137,7 +137,56 @@
   </template>
 
   <script>
+    const chouseContainer=document.getElementById("task-form")
+    const title=document.getElementById("title");
+    const Description=document.getElementById("description");
+    const status=document.getElementById("status");
+    const AddTaskButton=chouseContainer.querySelector("button");
+    const filter=document.getElementById("filter");
+    const searchInput=document.getElementById("search");
+    const clearAllButton=document.getElementById("clear-completed");
+    const TaskPlace=document.getElementById("task-list");
+
+    const tabl=[];
+
     
+
+    function addtask(){
+      AddTaskButton.addEventListener("click",(e)=>{
+        const task={
+            title:"",
+            Description:"",
+            status:""
+        };
+
+        e.preventDefault();
+        
+        task.title=title.value;
+        task.Description=Description.value;
+        task.status=status.value;
+        tabl.push(task); 
+        console.log(tabl);
+        title.value="";
+        Description.value="";
+        status.value="";
+        
+      });
+      
+      
+      
+    }
+    addtask();
+
+    function afficher(){
+        for(i=0;i<tabl.length;i++){
+            if(filter=="All"){
+                
+            }
+        }
+    }
+    
+
+
   </script>
 </body>
 </html>
